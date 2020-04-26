@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jantalus/Desktop/Algoritmos 3/Tp1/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+cstdio
+-
+cstdlib
+-
+chrono
+-
+set
+-
+map
+-
+
+/home/jantalus/Desktop/Algoritmos 3/Tp1/main_test.cpp
+main.cpp
+/home/jantalus/Desktop/Algoritmos 3/Tp1/main.cpp
+gtest/gtest.h
+-
+
