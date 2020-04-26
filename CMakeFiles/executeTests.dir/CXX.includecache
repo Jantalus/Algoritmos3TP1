@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jantalus/Desktop/Algoritmos 3/Tp1/main.cpp
+/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/main.cpp
 iostream
 -
 vector
@@ -24,9 +24,9 @@ set
 map
 -
 
-/home/jantalus/Desktop/Algoritmos 3/Tp1/main_test.cpp
+/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/main_test.cpp
 main.cpp
-/home/jantalus/Desktop/Algoritmos 3/Tp1/main.cpp
+/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/main.cpp
 gtest/gtest.h
 -
 

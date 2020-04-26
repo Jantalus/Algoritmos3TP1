@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jantalus/Desktop/Algoritmos 3/Tp1/main_test.cpp" "/home/jantalus/Desktop/Algoritmos 3/Tp1/CMakeFiles/executeTests.dir/main_test.cpp.o"
+  "/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/main_test.cpp" "/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/CMakeFiles/executeTests.dir/main_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

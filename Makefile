@@ -48,10 +48,10 @@ RM = /snap/clion/111/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/jantalus/Desktop/Algoritmos 3/Tp1"
+CMAKE_SOURCE_DIR = /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/jantalus/Desktop/Algoritmos 3/Tp1"
+CMAKE_BINARY_DIR = /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/jantalus/Desktop/Algoritmos 3/Tp1/CMakeFiles" "/home/jantalus/Desktop/Algoritmos 3/Tp1/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/CMakeFiles /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/jantalus/Desktop/Algoritmos 3/Tp1/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

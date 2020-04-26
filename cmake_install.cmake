@@ -1,4 +1,4 @@
-# Install script for directory: /home/jantalus/Desktop/Algoritmos 3/Tp1
+# Install script for directory: /home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jantalus/Desktop/Algoritmos 3/Tp1/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/nacho/Desktop/primerCuatri2020/Algo3/tp1/repo_tp1/Algoritmos3TP1/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
