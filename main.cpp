@@ -46,6 +46,39 @@ int BT(int i, int r, int k){
     return(max(BT(i+1, r, k), BT(i+1, min(r - S[i], RS[i]), k+1)));
 }
 
+
+int PD(int n, int R){
+    int matriz[n][R+1];
+    for (int i =0; i < n; i++){
+        for(int j = 0; i < R+1; i++){
+            matriz[i][j] = -1;
+        }
+    }
+
+    matriz[0][R] = 0; matriz[0][min(RS[0] , R - S[0])] = 1;
+    int r;
+    for (int i =0; i < n-1; i++){
+        for(int j = 0; i < R+1; i++){
+
+            if(matriz[i][j] != -1){
+               if(matriz[i][j] > matriz[i+1][j]) matriz[i+1][j] = matriz[i][j]; //NO LO AGREGO
+
+               if((j - S[i+1]) >= 0){ //SI NO ME QUEDA RESISTENCIA PARA AGREGAR NO HAGO NADA
+                   r = min(RS[i+1] , j - S[i+1]);
+                   if(matriz[i][j] + 1 > matriz[i+1][r]) matriz[i+1][r] = matriz[i][j] +1 ;// LO AGREGO
+               }
+            }
+        }
+    }
+
+    int max = 0;
+    for(int j = 0; j < R+1; j++){
+        if(matriz[n-1][j] > max) max = matriz[n-1][j];
+    }
+
+    return max;
+}
+
 /* int main(int argc, char** argv){
     map<string, string> algoritmosImplementados = {{"FB", "Fuerza Bruta"},{"BT", "Backtracking"},{"BT-F", "Backtracking con poda por factibilidad"}
     , {"BT-O", "Backtracking con poda por optimilidad"}};
