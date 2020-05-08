@@ -50,7 +50,7 @@ int BT(int i, int r, int k){
 int PD(int n, int R){
     int matriz[n][R+1];
     for (int i =0; i < n; i++){
-        for(int j = 0; i < R+1; i++){
+        for(int j = 0; j < R+1; j++){
             matriz[i][j] = -1;
         }
     }
@@ -58,7 +58,7 @@ int PD(int n, int R){
     matriz[0][R] = 0; matriz[0][min(RS[0] , R - S[0])] = 1;
     int r;
     for (int i =0; i < n-1; i++){
-        for(int j = 0; i < R+1; i++){
+        for(int j = 0; j < R+1; j++){
 
             if(matriz[i][j] != -1){
                if(matriz[i][j] > matriz[i+1][j]) matriz[i+1][j] = matriz[i][j]; //NO LO AGREGO
@@ -72,7 +72,7 @@ int PD(int n, int R){
     }
 
     int max = 0;
-    for(int j = 0; j < R+1; j++){
+    for(int j = 0; j < R+1 && n > 0; j++){
         if(matriz[n-1][j] > max) max = matriz[n-1][j];
     }
 
