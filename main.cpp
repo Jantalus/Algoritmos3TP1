@@ -27,6 +27,7 @@ int FB(int i, int r, int k){
     return(max(FB(i+1, r, k), FB(i+1, min(r - S[i], RS[i]), k+1)));
 }
 int K = INFINITO;
+
 int BT(int i, int r, int k){
     if(i == n){
         if(r < 0) return INFINITO;
@@ -48,6 +49,8 @@ int BT(int i, int r, int k){
 
 
 int PD(int n, int R){
+    if(n == 0) return 0;
+
     int matriz[n][R+1];
     for (int i =0; i < n; i++){
         for(int j = 0; j < R+1; j++){
@@ -72,16 +75,17 @@ int PD(int n, int R){
     }
 
     int max = 0;
-    for(int j = 0; j < R+1 && n > 0; j++){
+    for(int j = 0; j < R+1; j++){
         if(matriz[n-1][j] > max) max = matriz[n-1][j];
     }
 
     return max;
 }
 
-/* int main(int argc, char** argv){
+int main(int argc, char** argv){
     map<string, string> algoritmosImplementados = {{"FB", "Fuerza Bruta"},{"BT", "Backtracking"},{"BT-F", "Backtracking con poda por factibilidad"}
-    , {"BT-O", "Backtracking con poda por optimilidad"}};
+    , {"BT-O", "Backtracking con poda por optimilidad"}, {"DP", "Programacion dinámica"}
+    };
 
     if(argc < 2 || algoritmosImplementados.find(argv[1]) == algoritmosImplementados.end()){
         cerr << "Algoritmo no encontrado: " << argv[1] << endl;
@@ -97,6 +101,9 @@ int PD(int n, int R){
         cin >> S[i];
         cin >> RS[i];
     }
+
+    auto start = chrono::steady_clock::now();
+
     int res = INFINITO;
     if(algoritmo == "FB"){
         res = FB(0,R,0);
@@ -115,6 +122,17 @@ int PD(int n, int R){
         poda_optimalidad = true;
         res = BT(0,R,0);
     }
-    cout << (res == INFINITO? -1 : res) << endl;
+    else if (algoritmo == "DP")
+    {
+        res = PD(n,R);
+    }
 
-} */
+    auto end = chrono::steady_clock::now();
+    double total_time = chrono::duration<double, milli>(end - start).count();
+
+    // Imprimimos el tiempo de ejecución por stderr.
+    clog << total_time << endl;
+
+    cout << (res == INFINITO? -1 : res) << endl;
+    return 0;
+}
