@@ -11,7 +11,7 @@ using namespace std;
 
 bool poda_factibilidad = true; // define si la poda por factibilidad esta habilitada.
 bool poda_optimalidad = true; // define si la poda por optimalidad esta habilitada.
-int INFINITO = 0;
+int INFINITO = -1;
 
 int n, R;
 vector<int> S;
