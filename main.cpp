@@ -39,7 +39,8 @@ int BT(int i, int r, int k){
     }
 
     if(poda_optimalidad){
-        if(k+(S.size() -1 -i) <= K){
+        int a = k+(S.size() -1 -i); int b = K;
+        if(a <= b){
             return INFINITO;
         }
     }
@@ -47,9 +48,20 @@ int BT(int i, int r, int k){
     return(max(BT(i+1, r, k), BT(i+1, min(r - S[i], RS[i]), k+1)));
 }
 
+vector<vector<int>> M;
+int PD(int i, int r){
 
-int PD(int n, int R){
-    if(n == 0) return 0;
+    if(r < 0) return -1;
+    if(i == n) return 0;
+
+    int peso = S[i];int resistencia = RS[i];
+
+    if(M[i][r] == INFINITO) M[i][r] = max(PD(i+1, r), 1 + PD(i+1, min(r - peso, resistencia)));
+
+    return M[i][r];
+
+
+/*    if(n == 0) return 0;
 
     int matriz[n][R+1];
     for (int i =0; i < n; i++){
@@ -78,8 +90,7 @@ int PD(int n, int R){
     for(int j = 0; j < R+1; j++){
         if(matriz[n-1][j] > max) max = matriz[n-1][j];
     }
-
-    return max;
+*/
 }
 
 int main(int argc, char** argv){
@@ -124,7 +135,9 @@ int main(int argc, char** argv){
     }
     else if (algoritmo == "DP")
     {
-        res = PD(n,R);
+        M = vector<vector<int>>(n, vector<int>(R+1, -1));
+
+        res = PD(0,R);
     }
 
     auto end = chrono::steady_clock::now();
@@ -134,5 +147,6 @@ int main(int argc, char** argv){
     clog << total_time << endl;
 
     cout << (res == INFINITO? -1 : res) << endl;
+
     return 0;
 }
