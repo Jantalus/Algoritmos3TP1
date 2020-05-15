@@ -59,38 +59,6 @@ int PD(int i, int r){
     if(M[i][r] == INFINITO) M[i][r] = max(PD(i+1, r), 1 + PD(i+1, min(r - peso, resistencia)));
 
     return M[i][r];
-
-
-/*    if(n == 0) return 0;
-
-    int matriz[n][R+1];
-    for (int i =0; i < n; i++){
-        for(int j = 0; j < R+1; j++){
-            matriz[i][j] = -1;
-        }
-    }
-
-    matriz[0][R] = 0; matriz[0][min(RS[0] , R - S[0])] = 1;
-    int r;
-    for (int i =0; i < n-1; i++){
-        for(int j = 0; j < R+1; j++){
-
-            if(matriz[i][j] != -1){
-               if(matriz[i][j] > matriz[i+1][j]) matriz[i+1][j] = matriz[i][j]; //NO LO AGREGO
-
-               if((j - S[i+1]) >= 0){ //SI NO ME QUEDA RESISTENCIA PARA AGREGAR NO HAGO NADA
-                   r = min(RS[i+1] , j - S[i+1]);
-                   if(matriz[i][j] + 1 > matriz[i+1][r]) matriz[i+1][r] = matriz[i][j] +1 ;// LO AGREGO
-               }
-            }
-        }
-    }
-
-    int max = 0;
-    for(int j = 0; j < R+1; j++){
-        if(matriz[n-1][j] > max) max = matriz[n-1][j];
-    }
-*/
 }
 
 int main(int argc, char** argv){
@@ -120,7 +88,7 @@ int main(int argc, char** argv){
         res = FB(0,R,0);
     }
     if(algoritmo == "BT"){
-        poda_factibilidad = true;
+        poda_factibilidad = poda_optimalidad = true;
         res = BT(0,R,0);
     }
     if(algoritmo == "BT-F"){
